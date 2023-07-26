@@ -5,46 +5,31 @@
 @import 'libs/breakpoints';
 
 /*
-	Dimension by HTML5 UP
+	Aerial by HTML5 UP
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 
-/* BG */
+/* Wrapper */
 
-	#bg {
-		body.is-preload & {
-			&:before {
-				background-color: transparent;
-			}
-		}
+	#wrapper {
+		opacity: 1 !important;
+	}
+
+/* Overlay */
+
+	#overlay {
+		opacity: 1 !important;
 	}
 
 /* Header */
 
 	#header {
-		body.is-preload & {
-			> * {
-				opacity: 1;
+		opacity: 1 !important;
+
+		nav {
+			li {
+				opacity: 1 !important;
 			}
-
-			@include vendor('filter', 'none');
-
-			.content {
-				.inner {
-					max-height: none;
-					padding: 3rem 2rem;
-					opacity: 1;
-				}
-			}
-		}
-	}
-
-/* Main */
-
-	#main {
-		article {
-			opacity: 1;
-			margin: (_size(element-margin) * 2) 0 0 0;
 		}
 	}
