@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html>
-
+ 
 <head>
     <title>Car Accessories</title>
     <link rel="stylesheet" href="/css/global.css">
+    
 </head>
-
+ 
 <body>
     <h1>Car Accessories</h1>
-
+    
     <form id="accessoryForm">
         <label for="accessory">Select an accessory:</label>
         <select id="accessory" name="accessory">
@@ -23,9 +24,9 @@
         <br>
         <button type="button" onclick="addToProductList()">Add</button>
     </form>
-
+ 
     <h2>Product List</h2>
-
+ 
     <table id="productList">
         <tr>
             <th>Accessory</th>
@@ -33,32 +34,32 @@
             <th>Price</th>
         </tr>
     </table>
-
-    <p class="total">Total Price: $<span id="totalPrice">0.00</span></p>
-    <p class="total">VAT (7%): $<span id="vatAmount">0.00</span></p>
-    <p class="total">Total Price with VAT: $<span id="totalPriceWithVAT">0.00</span></p>
-
+ 
+    <p class="total">Total Price: $<span id="totalPrice">0</span></p>
+ 
     <script>
+ 
         function addToProductList() {
             var accessory = document.getElementById("accessory").value;
-            var accessoryName = document.getElementById("accessory").options[document.getElementById("accessory").selectedIndex].text;
-            var amount = parseInt(document.getElementById("amount").value);
-            var price = calculatePrice(accessory) * amount;
-
+            var accessoryName = document.getElementById("accessory").innerText;
+            var amount = document.getElementById("amount").value;
+            var price = calculatePrice(accessory);
+ 
             var table = document.getElementById("productList");
             var row = table.insertRow(-1);
             var accessoryCell = row.insertCell(0);
             var amountCell = row.insertCell(1);
             var priceCell = row.insertCell(2);
-
-            accessoryCell.innerHTML = accessoryName;
+ 
+            accessoryCell.innerHTML = accessory;
             amountCell.innerHTML = amount;
-            priceCell.innerHTML = "$" + price.toFixed(2);
-
+            priceCell.innerHTML = "$" + price;
+ 
             updateTotalPrice(price);
         }
-
+ 
         function calculatePrice(accessory) {
+
             switch (accessory) {
                 case "p123":
                     return 50;
@@ -72,22 +73,15 @@
                     return 0;
             }
         }
-
-        var totalPrice = 0;
+        var totalPrice = 0
         function updateTotalPrice(price) {
             var totalPriceElement = document.getElementById("totalPrice");
+            // var totalPrice = parseFloat(totalPriceElement.innerHTML);
+            console.log(totalPrice,price)
             totalPrice += price;
             totalPriceElement.innerHTML = totalPrice.toFixed(2);
-            calculateVAT(totalPrice);
-        }
-
-        function calculateVAT(grossPrice) {
-            var vatRate = 0.07;
-            var vatAmount = grossPrice * vatRate;
-            document.getElementById("vatAmount").textContent = vatAmount.toFixed(2);
-            document.getElementById("totalPriceWithVAT").textContent = (grossPrice + vatAmount).toFixed(2);
         }
     </script>
 </body>
-
-</html>
+ 
+</html></select></form>
