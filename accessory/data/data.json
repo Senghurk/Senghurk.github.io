@@ -1,0 +1,26 @@
+[
+  {
+      "quantity": 2,
+      "description": "Car Cover 0001",
+      "unitPrice": 500,
+      "amount": 1450.00
+  },
+  {
+      "quantity": 3,
+      "description": "Seat Cover 0002",
+      "unitPrice": 400,
+      "amount": 2000.00
+  },
+  {
+      "quantity": 4,
+      "description": "Floor Mats 0003",
+      "unitPrice": 300,
+      "amount": 200.00
+  },
+  {
+      "quantity": 1,
+      "description": "Door Visors 0004",
+      "unitPrice": 600,
+      "amount": 600.00
+  }
+]

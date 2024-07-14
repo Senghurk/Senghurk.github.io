@@ -1,0 +1,99 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa;
+    padding: 20px;
+}
+
+.container {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    color: #333333;
+}
+
+footer {
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 20px;
+    color: #888888;
+    font-size: 14px;
+}
+
+.modal-header,
+.modal-footer {
+    background-color: #f1f1f1;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    border-color: #6c757d;
+}
+
+.table th,
+.table td {
+    vertical-align: middle !important;
+}
+
+.table th {
+    background-color: #f1f1f1;
+}
+
+.table th {
+    text-align: center; /* Center align Quantity and Description */
+}
+
+.table td {
+    padding: 8px;
+}
+
+.table th.text-right,
+.table td.text-right {
+    text-align: right; /* Right align Unit Price and Amount */
+}
+
+.table td button {
+    background-color: #ff4d4d;
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+    margin-right: 10px; /* Add margin to the right of the button */
+}
+
+.table td button:hover {
+    background-color: #e60000;
+}
+
+p.cen {
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 20px;
+    color: #000000;
+    font-size: 14px;
+}
+
+/* Add custom styling for modal */
+.modal-content {
+    border-radius: 10px; /* Adjust the border-radius as needed */
+}
+
+.modal-header {
+    border-radius: 10px 10px 0 0; /* Round only the top corners */
+}
+
+.modal-footer {
+    border-radius: 0 0 10px 10px; /* Round only the bottom corners */
+}
