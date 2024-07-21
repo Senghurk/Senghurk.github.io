@@ -4,14 +4,30 @@ function addItem() {
     var d = $("#newItemDescription").val();
     var u = $("#newItemPPU").val();
     var q = $("#newItemQty").val();
-    console.debug(d, u, q);
+
     quotationData.push({
-        description: d,
+        description: getDescriptionLabel(d),
         quantity: Number.parseFloat(q),
         unitPrice: Number.parseFloat(u)
     });
+
     $('#exampleModal').modal('hide');
     renderTable();
+}
+
+function getDescriptionLabel(value) {
+    switch (value) {
+        case "CarCover":
+            return "Car Cover";
+        case "SeatCover":
+            return "Seat Cover";
+        case "FloorMats":
+            return "Floor Mats";
+        case "DoorVisors":
+            return "Door Visors";
+        default:
+            return "";
+    }
 }
 
 function renderTable() {
@@ -23,10 +39,9 @@ function renderTable() {
     var vat = (subTotal * .07).toFixed(2);
     var total = subTotal * 1.07;
 
-    console.log('subTotal', subTotal);
-    $("#subTotal").html("" + subTotal);
-    $("#vat").html("" + vat);
-    $("#total").html("" + total);
+    $("#subTotal").html(subTotal.toFixed(2));
+    $("#vat").html(vat);
+    $("#total").html(total.toFixed(2));
 
     var dataRows = data.map((e, i) => {
         let amount = e.quantity * e.unitPrice;
@@ -41,12 +56,7 @@ function renderTable() {
         </tr>`;
     });
 
-    $(".data-row").remove();
-
-    // Insert into the table
-    dataRows.forEach((r) => {
-        $('#quotationTable tbody').before(r);
-    });
+    $("#quotationTable tbody").html(dataRows.join(''));
 
     // Update date and time
     var now = new Date();
@@ -61,10 +71,5 @@ function deleteItem(index) {
 }
 
 $(document).ready(function () {
-    $.getJSON('data/data.json', data => {
-        // render the table
-        quotationData = data;
-
-        renderTable();
-    });
+    renderTable(); // Just render the table initially
 });
